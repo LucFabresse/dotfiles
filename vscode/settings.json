@@ -1,0 +1,149 @@
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.DS_Store": true,
+        "**/dist": true,
+        "**/build": true,
+        "**/env/**": true,
+        "**/venv/**": true,
+        "**/virtualenv/**": true,
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/vendors": true,
+        "**/__pycache__": true,
+        "**/**/*.pyc": true
+    },
+    "files.watcherExclude": {
+        "**/.git/objects/**": true,
+        "**/node_modules/**": true,
+        "**/build/**": true,
+        "**/dist/**": true,
+        "**/env/**": true,
+        "**/venv/**": true,
+        "**/virtualenv/**": true,
+        "**/bower_components/**": true,
+        "**/vendors/**": true,
+        "**/__pycache__": true,
+        "**/**/*.pyc": true
+    },
+    "editor.mouseWheelZoom": true,
+    "editor.fontSize": 13,
+    "cSpell.language": "en,fr",
+    "cSpell.userWords": [
+        "Lorsqu'un",
+        "aujourd'hui"
+    ],
+    "cSpell.enabledLanguageIds": [
+        "latex",
+        "markdown",
+        "text"
+    ],
+    "editor.tabCompletion": "onlySnippets",
+    "files.autoSave": "off",
+    "workbench.startupEditor": "newUntitledFile",
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": "markup.fenced_code.block.markdown",
+                "settings": {
+                    "foreground": "#989898"
+                }
+            }
+        ]
+    },
+    "workbench.colorCustomizations": {
+        "[Default Dark+]": {
+            "editor.background": "#050505",
+            "sideBar.background": "#111111"
+        }
+    },
+    "workbench.activityBar.visible": true,
+    "files.trimTrailingWhitespace": true,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "explorer.confirmDelete": false,
+    "editor.renderControlCharacters": true,
+    "editor.wordWrap": "on",
+    // "editor.wrappingIndent": "indent",
+    "awarestAlign.eol": "\n",
+    "awarestAlign.tab": "   ",
+    "latex-workshop.bind.altKeymap.enabled": true,
+    // "latex-workshop.latex.recipes" : [
+    //     {
+    //         "name": "pdflatex",
+    //         "tools": [
+    //             "pdflatex"            ]
+    //     },
+    //     {
+    //         "name": "bibtex",
+    //         "tools": [
+    //             "bibtex"            ]
+    //     },
+    //     {
+    //         "name": "pdflatex ➞ bibtex ➞ pdflatex`×2",
+    //         "tools": [
+    //             "pdflatex",
+    //             "bibtex",
+    //             "pdflatex",
+    //             "pdflatex"
+    //         ]
+    //     },
+    //     {
+    //         "name": "latexmk 🔃",
+    //         "tools": [
+    //             "latexmk"
+    //         ]
+    //     }
+    // ],
+    "latex-workshop.latex.recipe.default": "lastUsed",
+    "latex-workshop.message.badbox.show": false,
+    "latex-workshop.message.warning.show": false,
+    "latex-workshop.view.pdf.viewer": "external",
+    "editor.minimap.size": "fit",
+    "window.restoreWindows": "none",
+    "editor.minimap.enabled": false,
+    "editor.renderIndentGuides": true,
+    "editor.minimap.renderCharacters": true,
+    // "editor.autoIndent": true,
+    "window.openFoldersInNewWindow": "on",
+    "editor.acceptSuggestionOnEnter": "off",
+    "emmet.triggerExpansionOnTab": true,
+    "editor.renameOnType": true,
+    "terminal.integrated.fontSize": 13,
+    "terminal.integrated.fontFamily": "\"Meslo LG S DZ for Powerline\",arial",
+    "editor.fontFamily": "'DejaVu Sans Mono for Powerline', 'monospace', monospace, 'Droid Sans Fallback'",
+    "workbench.iconTheme": "material-icon-theme",
+    "security.workspace.trust.enabled": false,
+    "dart.openDevTools": "flutter",
+    "[dart]": {
+        "editor.formatOnSave": true,
+        "editor.formatOnType": true,
+        "editor.rulers": [
+            80
+        ],
+        "editor.selectionHighlight": false,
+        "editor.suggest.snippetsPreventQuickSuggestions": false,
+        "editor.suggestSelection": "first",
+        "editor.tabCompletion": "onlySnippets",
+        "editor.wordBasedSuggestions": false
+    },
+    "open-in-browser.default": "chrome",
+    "extensions.ignoreRecommendations": false,
+    "php.validate.enable": false,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "git.confirmSync": false,
+    "dart.previewLsp": true,
+    "explorer.confirmDragAndDrop": false,
+    "dart.allowAnalytics": false,
+    "dart.analysisServerFolding": false,
+    "dart.analyzeAngularTemplates": false,
+    "dart.autoImportCompletions": false,
+    "dart.checkForSdkUpdates": false,
+    "dart.embedDevTools": false,
+    "dart.enableSnippets": false,
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter.notebook.ipynb"
+    },
+    "security.workspace.trust.untrustedFiles": "open",
+    "window.zoomLevel": 2
+}

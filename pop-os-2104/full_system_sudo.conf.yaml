@@ -1,0 +1,39 @@
+- shell:
+    - [ 'if ! grep "\.docker\.com" /etc/apt/sources.list /etc/apt/sources.list.d/*; then curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add - && UBUNTU_VERSION=$(lsb_release -cs) && add-apt-repository --no-update "deb [arch=amd64] https://download.docker.com/linux/ubuntu $UBUNTU_VERSION stable"; fi', Adding Docker's APT repository]
+    - [ 'if ! grep "\.yktooo" /etc/apt/sources.list /etc/apt/sources.list.d/*; then apt-add-repository --no-update ppa:yktooo/ppa ; fi', Adding yktooo's PPA]
+
+- apt:
+    - dconf-editor
+    - timeshift
+    - indicator-sound-switcher
+    - virtualbox
+    - discord
+    - calibre
+    - pdftk-java
+    - containerd.io
+    - docker-ce
+    - docker-ce-cli
+    - qemu-system-arm
+    - qemu-system-x86
+    - qemu-user-static
+    - texlive-full
+    - context
+    - youtube-dl
+
+# - shell:
+#     - ['TEMP_DEB=$(mktemp) && wget -O "$TEMP_DEB" "https://discord.com/api/download?platform=linux&format=deb" && dpkg --skip-same-version -i "$TEMP_DEB" && rm -f "$TEMP_DEB"', Installing Discord]
+#     - [apt --fix-broken -y install, Installing Discord dependencies]
+#     - ['TEMP_DEB=$(mktemp) && wget -O "$TEMP_DEB" $(curl -s https://api.github.com/repos/keeweb/keeweb/releases/latest | grep "browser_download_url.*deb" | cut -d : -f 2,3 | tr -d \") && dpkg --skip-same-version -i "$TEMP_DEB" && rm -f "$TEMP_DEB"', Installing KeeWeb]
+#     - [apt --fix-broken -y install, Installing KeeWeb dependencies] # https://keeweb.info/
+#     - ['TEMP_DEB=$(mktemp) && wget -O "$TEMP_DEB" $(curl -s https://api.github.com/repos/cli/cli/releases/latest | grep "browser_download_url.*amd64\.deb" | cut -d : -f 2,3 | tr -d \") && dpkg --skip-same-version -i "$TEMP_DEB" && rm -f "$TEMP_DEB"', Installing gh]
+#     - [apt --fix-broken -y install, Installing gh dependencies]
+#     - [TEMP_DEB=$(mktemp) && wget -O "$TEMP_DEB" 'https://steamcdn-a.akamaihd.net/client/installer/steam.deb' && dpkg --skip-same-version -i "$TEMP_DEB" && rm -f "$TEMP_DEB", Installing Steam]
+#     - [apt --fix-broken -y install, Installing Steam dependencies]
+#     - [TEMP_DEB=$(mktemp) && wget -O "$TEMP_DEB" 'https://zoom.us/client/latest/zoom_amd64.deb' && dpkg --skip-same-version -i "$TEMP_DEB" && rm -f "$TEMP_DEB", Installing Zoom]
+#     - [apt --fix-broken -y install, Installing Zoom dependencies]
+
+# - shell:
+#     - [flatpak install Postman, 'Install Postman']
+
+- shell:
+    - [ usermod -aG docker $USER, Add user in Docker group ]

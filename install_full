@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+set -e
+
+./install_minimal
+sudo ./install -p dotbot-apt/apt.py -c pop-os-2104/full_system_sudo.conf.yaml
+./install -p dotbot-vscode/vscode.py -c pop-os-2104/full_system.conf.yaml

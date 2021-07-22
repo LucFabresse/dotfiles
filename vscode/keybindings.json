@@ -1,0 +1,131 @@
+// Place your key bindings in this file to override the defaults
+// https://code.visualstudio.com/docs/editor/variables-reference
+[
+    {
+        "key": "ctrl+alt+o",
+        "command": "workbench.action.terminal.sendSequence",
+        "args": {
+            "text": "xdg-open '${fileDirname}/${fileBasenameNoExtension}.pdf'\u000D"
+        }
+    },
+    {
+        "key": "ctrl+d",
+        "command": "workbench.action.terminal.sendSequence",
+        "args": {
+            "text": "cd '${fileDirname}'\u000D"
+        },
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "workbench.action.terminal.sendSequence",
+        "args": {
+            "text": "clear\u000D"
+        },
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+down",
+        "command": "editor.action.duplicateSelection"
+    },
+    {
+        "key": "alt+b",
+        "command": "markdown.extension.editing.toggleBold",
+        "when": "editorTextFocus && !editorReadonly && editorLangId == 'markdown'"
+    },
+    {
+        "key": "ctrl+b",
+        "command": "-markdown.extension.editing.toggleBold",
+        "when": "editorTextFocus && !editorReadonly && editorLangId == 'markdown'"
+    },
+    { "key": "meta+/",          "command": "extension.awarestAlignFirst", "args": "//" },
+    { "key": "meta+;",          "command": "extension.awarestAlignFirst", "args": ": " },
+    { "key": "meta+space",      "command": "extension.awarestAlignEach",  "args": " "  },
+    { "key": "meta+,",          "command": "extension.awarestAlignList",  "args": ","  },
+    { "key": "meta+.",          "command": "extension.awarestAlignHtml",  "args": " "  },
+    { "key": "meta+enter",      "command": "extension.awarestAlignLines", "args": " "  },
+    {
+        "key": "meta+ctrl+space",
+        "command": "extension.awarestAlignFirst",
+        "args": " "
+    },
+    {
+        "key": "ctrl+alt+l",
+        "command": "workbench.action.gotoLine"
+    },
+    {
+        "key": "ctrl+g",
+        "command": "-workbench.action.gotoLine"
+    },
+    {
+        "key": "ctrl+e",
+        "command": "-workbench.action.quickOpen"
+    },
+    {
+        "key": "ctrl+e",
+        "command": "-workbench.action.quickOpenNavigateNextInFilePicker",
+        "when": "inFilesPicker && inQuickOpen"
+    },
+    {
+        "key": "ctrl+g",
+        "command": "editor.action.nextSelectionMatchFindAction",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+f3",
+        "command": "-editor.action.nextSelectionMatchFindAction",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+shift+g",
+        "command": "-workbench.view.scm"
+    },
+    {
+        "key": "ctrl+shift+g",
+        "command": "editor.action.previousSelectionMatchFindAction",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+shift+f3",
+        "command": "-editor.action.previousSelectionMatchFindAction",
+        "when": "editorFocus"
+    },
+    {
+        "key": "shift+down",
+        "command": "-cursorColumnSelectDown",
+        "when": "editorColumnSelection && textInputFocus"
+    },
+    {
+        "key": "shift+up",
+        "command": "-cursorColumnSelectUp",
+        "when": "editorColumnSelection && textInputFocus"
+    },
+    {
+        "key": "shift+right",
+        "command": "-cursorColumnSelectRight",
+        "when": "editorColumnSelection && textInputFocus"
+    },
+    {
+        "key": "shift+left",
+        "command": "-cursorColumnSelectLeft",
+        "when": "editorColumnSelection && textInputFocus"
+    },
+    {
+        "key": "alt+left",
+        "command": "cursorColumnSelectLeft",
+        "when": "editorColumnSelection && textInputFocus"
+    },
+    {
+        "key": "alt+right",
+        "command": "cursorColumnSelectRight",
+        "when": "editorColumnSelection && textInputFocus"
+    },
+    {
+        "key": "ctrl+alt+.",
+        "command": "latex-workshop.close-env"
+    },
+    {
+        "key": "ctrl+m",
+        "command": "-editor.action.toggleTabFocusMode"
+    }
+]

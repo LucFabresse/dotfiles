@@ -1,0 +1,27 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+      force: true
+
+- clean: ['~']
+
+- shell:
+    - [ ./powerline-fonts/install.sh, 'Install powerline fonts' ]
+    - [ ./gnome/loadDconf.sh /org/gnome/ gnome/gnome.dconf, 'Load GNOME dconf' ]
+
+- link:
+    ~/.zshrc: zsh/zshrc_minimal
+    ~/.oh-my-zsh/custom: zsh/custom
+    ~/.config/Code/User/settings.json: vscode/settings_minimal.json
+
+- create:
+  - ~/.local/bin
+  - ~/.bookmarks
+
+- vscode:
+    - 'yzhang.markdown-all-in-one'
+    - "pkief.material-icon-theme"
+    - "ms-python.python"
+    - "ms-vsliveshare.vsliveshare-pack"
+    - "ms-vscode-remote.remote-ssh"

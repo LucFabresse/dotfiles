@@ -1,0 +1,21 @@
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[user]
+	email = luc.fabresse@gmail.com
+	name = LucFabresse
+[credential]
+	helper = store
+[merge]
+    tool = code
+[mergetool "code"]
+    cmd = code -n --wait $MERGED
+[diff]
+    tool = code
+[difftool "code"]
+    cmd = code -n --wait --diff $LOCAL $REMOTE
+[color]
+	ui = auto
+

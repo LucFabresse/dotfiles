@@ -1,0 +1,20 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+      force: true
+
+- shell:
+    - [ DC_PATH=~/.local/bin/docker-compose && curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o "$DC_PATH" && chmod +x "$DC_PATH", Installing Docker Compose]
+    # - [/usr/bin/pip3 install --user arxiv-latex-cleaner, Installing arxiv_latex_cleaner]
+
+- link:
+    ~/.gitconfig: git/gitconfig
+    #~/.gitignore_global: git/gitignore_global
+    ~/.zshrc: zsh/zshrc
+    ~/.config/Code/User/settings.json: vscode/settings.json
+
+- vscode:
+    - "zignd.html-css-class-completion"
+    - "james-yu.latex-workshop"
+    - "tecosaur.latex-utilities"

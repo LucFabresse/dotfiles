@@ -17,7 +17,7 @@ $ git clone --recursive https://github.com/lucfabresse/dotfiles $HOME/.dotfiles
 $ cd $HOME/.dotfiles
 
 $ ./install_minimal
-./install_minimal                            
+./install_minimal
 Updating APT
 Installing the APT packages: apt-transport-https, ca-certificates, curl, gnupg-agent
 APT packages installed successfully
@@ -59,16 +59,10 @@ All extensions installed successfully
 
 ```bash
 git clone --recursive https://github.com/lucfabresse/dotfiles $HOME/.dotfiles && $HOME/.dotfiles && ./install_full
-```
-
-Run the following to finish the Docker installation:
-
-```bash
-sudo usermod -aG docker $USER
-# Log out and log in 
+# Log out and log in
 ```
 
 ## To look at
 
 - dotbot-gsettings
-- save the git config in a 2nd user-specific path (`~/.config/git/config`), so I can override stuff in the local machine (in `~/.gitconfig`), such as the email. 
+- save the git config in a 2nd user-specific path (`~/.config/git/config`), so I can override stuff in the local machine (in `~/.gitconfig`), such as the email.

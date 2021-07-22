@@ -21,6 +21,10 @@ overlay-key-action='WORKSPACES'
 show-applications-button=false
 show-workspaces-button=false
 
+[terminal/legacy/keybindings]
+copy='<Primary>c'
+paste='<Primary>v'
+
 [terminal/legacy/profiles:]
 default='8687b690-1c89-4b7d-823d-a9a0a1a8cfd2'
 list=['b1dcc9dd-5262-4d8d-a863-c897e6d979b9', '8687b690-1c89-4b7d-823d-a9a0a1a8cfd2']

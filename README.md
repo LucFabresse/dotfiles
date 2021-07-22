@@ -62,7 +62,20 @@ git clone --recursive https://github.com/lucfabresse/dotfiles $HOME/.dotfiles &&
 # Log out and log in
 ```
 
-## To look at
+## To do / To look at
 
 - dotbot-gsettings
 - save the git config in a 2nd user-specific path (`~/.config/git/config`), so I can override stuff in the local machine (in `~/.gitconfig`), such as the email.
+- dotbot-apt do not show a progress bar or so. could we use `debconf-apt-progress`?
+- what about passwords/credentials?
+  - https://chrisschuld.com/2019/06/securing-information-in-dotfiles-and-aliases-with-pass/
+  - https://www.passwordstore.org/
+  - https://www.dyne.org/software/tomb/
+  - https://www.passwordstore.org/#extensions
+  - https://f-droid.org/packages/dev.msfjarvis.aps/
+- Tresorit
+- android remote app
+- copy/paste terminal (tilix?)
+- clipboard manager
+  - https://extensions.gnome.org/extension/779/clipboard-indicator/
+  - https://esite.ch/tag/diodon/

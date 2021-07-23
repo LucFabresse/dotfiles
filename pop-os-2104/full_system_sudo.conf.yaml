@@ -37,3 +37,5 @@
 
 - shell:
     - [ usermod -aG docker $USER, Add user in Docker group ]
+    - [flatpak install -y flathub com.spotify.Client, 'Install Spotify']
+    - [flatpak install -y flathub org.signal.Signal, 'Install Signal']

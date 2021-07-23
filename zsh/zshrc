@@ -138,9 +138,9 @@ export PGID=`id -g`
 # export PATH=$HOME/.local/bin:/home/luc/.platformio/penv/bin:$PATH
 export PATH="$PATH:$HOME/.local/bin"
 #export PATH="$PATH:$HOME/.local/bin:/home/luc/.platformio/penv/bin:/home/luc/.local/share/flutter/bin"
-# export PATH="$HOME/.local/share/android-studio/bin:$PATH"
 
-# export ANDROID_HOME="$HOME/.local/share/android-sdk"
+# export PATH="$HOME/.local/share/android-studio/bin:$PATH"
+export ANDROID_HOME="$HOME/.local/share/android-sdk"
 
 if [[ -s $HOME/.zshrc_private ]] ; then
     source $HOME/.zshrc_private

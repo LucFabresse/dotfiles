@@ -42,11 +42,6 @@ git clone --recursive https://github.com/lucfabresse/dotfiles $HOME/.dotfiles &&
 
 ## To do / To look at
 
-- dotbot-local
-  - local / private customization
-  - https://www.anishathalye.com/2014/08/03/managing-your-dotfiles/
-- save the git config in a 2nd user-specific path (`~/.config/git/config`), so I can override stuff in the local machine (in `~/.gitconfig`), such as the email.
-- dotbot-apt do not show a progress bar or so. could we use `debconf-apt-progress`?
 - android remote app
 - clipboard manager
   - https://extensions.gnome.org/extension/779/clipboard-indicator/
@@ -54,6 +49,8 @@ git clone --recursive https://github.com/lucfabresse/dotfiles $HOME/.dotfiles &&
 - custom bin scripts ~/.dotfiles/bin
   - in .zshrc add export PATH=~/.dotfiles/bin:${PATH}
 - tmux / split term
+
+- dotbot-apt do not show a progress bar or so. could we use `debconf-apt-progress`?
 
 ## Excluded
 

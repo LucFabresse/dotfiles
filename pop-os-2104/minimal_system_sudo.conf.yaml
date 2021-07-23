@@ -12,6 +12,7 @@
 #- sshuttle
 #- guake
 - apt:
+    - filezilla
     - nautilus-admin
     - code
     - btrfs-progs
@@ -67,6 +68,13 @@
     - wireshark-qt
     - xclip
     - xz-utils
+    - gimp
+    - inkscape
+    - moserial
+    - minicom
+    - vlc
+    - kazam
+    - pitivi
 
 - shell:
     - [TEMP_DEB=$(mktemp) && wget -O "$TEMP_DEB" 'https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb' && dpkg --skip-same-version -i "$TEMP_DEB" && rm -f "$TEMP_DEB", Installing Google Chrome]
@@ -75,5 +83,4 @@
 - shell:
     - ['flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo', Adding the Flathub repository to Flatpak]
     # - [flatpak install flathub com.toggl.TogglDesktop, Installing Toggl Desktop]
-    # - [flatpak install -y flathub com.visualstudio.code, 'Install VSCode']
     - [flatpak install -y flathub com.getpostman.Postman, 'Install Postman']

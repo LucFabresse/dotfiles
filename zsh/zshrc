@@ -69,7 +69,7 @@ export DEFAULT_USER=`whoami`
 # too many plugins slow down shell startup.
 # plugins=(colorize cp git ssh-agent per-directory-history docker docker-compose svn-fast-info) # ^G to active per directory history
 
-plugins=(colorize cp git) 
+plugins=(colorize cp git)
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 source $ZSH/oh-my-zsh.sh
@@ -142,3 +142,6 @@ export PATH="$PATH:$HOME/.local/bin"
 
 # export ANDROID_HOME="$HOME/.local/share/android-sdk"
 
+if [[ -s $HOME/.zshrc_private ]] ; then
+    source $HOME/.zshrc_private
+fi

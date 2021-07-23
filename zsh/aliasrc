@@ -1,5 +1,5 @@
-alias -s {yml,yaml,txt,tex,md}=code
 
+# Shell
 alias ls='ls -Fh --color=auto'
 alias l='ls'
 alias ll='ls -l'
@@ -18,30 +18,44 @@ alias 3='cd -3'
 alias 4='cd -4'
 alias 5='cd -5'
 
+function catn() {
+    tail +$(( $2-3 )) $1 | head -5 }
+
+alias dfh="df -Th| grep -Ev '(udev|tmpfs)'"
+
+function fixrights() {
+    find $@ -type d -exec chmod 755 {} \;
+    find $@ -type f -exec chmod 644 {} \;
+}
+
 # open
 function open() {
     xdg-open $@ 1>/dev/null 2>&1
 }
 alias o='open'
 
-
 # Push and pop directories on directory stack
 alias pu='pushd'
 alias po='popd'
 alias h='history 10'
 
-alias e='code '
-alias en='code -n '
-
-alias p="code -n /home/luc/.luc/VSCodeProjects/pw.code-workspace"
-alias z="code -n /home/luc/.luc/VSCodeProjects/IoConfig.code-workspace"
-alias n="code /home/luc/Documents/Notes/notes.code-workspace"
+# VSCode
+alias -s {yml,yaml,txt,tex,md}=code
+alias e='code -n '
+alias ee='code '
 
 # dev
 alias gcc99="gcc -W -Wall -std=c99 -g "
 alias clang99="clang -Wall -W -std=c99 -g "
+function gcc-raylib() {
+    gcc -Wall -std=c99 -s -O1 -I/usr/local/include -L/usr/local/lib $* -lraylib -lGL -lm -lpthread -ldl -lrt -lX11
+}
+
 alias valgrind-check="valgrind --leak-check=yes --leak-check=full --show-leak-kinds=all --show-reachable=no "
 alias myip="curl ifconfig.me"
+alias dc="docker-compose"
+alias pharo='~/Pharo/vms/90-x64/bin/pharo '
+
 
 # remove all untracked / unstaged files
 unalias gcm gcmsg
@@ -49,40 +63,13 @@ alias gcm="git commit -m "
 alias git-clean="git clean -fdx"
 alias git-info="git remote -v"
 
-#** Network **
-alias routechapo="sudo route add -net 10.2.0.0/16 10.1.2.1"
-alias routeeleve="sudo route add -net 10.100.0.0/16 10.1.2.1"
-# add Proxy 10.100.1.4 for eleve network
-
 #** SVN **
 alias svn-clean="svn status | egrep '^\?' | cut -c8- | xargs rm"
 alias svn-rmExclamationMark="svn st | grep ^! | awk '{print \" --force \"$2}' | xargs svn rm"
 # alias svn-ignoreLaTeXTmp='rm -f *.synctex.gz *.aux *.log *.toc *.bbl *.blg *.out *.pdfsync && svn --recursive propset svn:ignore "*.synctex.gz $'\n'*.aux$'\n'*.log$'\n'*.toc$'\n'*.bbl$'\n'*.blg$'\n'*.out$'\n'*.pdfsync$'\n'*.fdb_latexmk" .'
 # alias svn-ignoreLaTeXTmp='svn -R propset svn:ignore . -F ~/.subversion/ignoreLatex'
 
-
-alias pm3="/home/luc/Prog/NFC/proxmark3RRG.git/pm3"
-
-alias dc="docker-compose"
-
-# # Keyboard mapping
-# alias loadxmodmap="xmodmap ~/.Xmodmap"
-
-# passwords
-function psearch() {
-    grep -Rni $1 ~/TresoritDrive/PersoCrypted/Luc/Pwds ~/TresoritDrive/PersoCrypted/Divers/Pwds }
-
-function catn() {
-    tail +$(( $2-3 )) $1 | head -5 }
-
-alias dfh="df -Th| grep -Ev '(udev|tmpfs)'"
-
 # alias notify-log="grep notifications-logger /var/log/syslog"
-
-function fixrights() {
-    find $@ -type d -exec chmod 755 {} \;
-    find $@ -type f -exec chmod 644 {} \;
-}
 
 function svg2pdf() {
     rsvg-convert -f pdf -o ${1%.svg}.pdf $1
@@ -110,12 +97,7 @@ function lm(){
 
 zstyle ":completion:*:*:lm:*" file-patterns "*.tex:all-files *(-/)"
 
-
-function sshagent() {
-    eval "$(ssh-agent -s)"
-    ssh-add ~/.ssh/oldssh
-    ssh-add ~/.ssh/workkey
-}
+# Utils
 
 unzp() {
     if [[ $# != 1 ]]; then
@@ -129,13 +111,8 @@ unzp() {
     unzip "$1" -d "${target##*/}"
 }
 
-alias pharo='$HOME/Pharo/vms/90-x64/bin/pharo '
-
 # https://github.com/free5lot/hid-apple-patched
-alias fnmode='sudo bash -c "echo 2 > /sys/module/hid_apple/parameters/fnmode"'
+# alias fnmode='sudo bash -c "echo 2 > /sys/module/hid_apple/parameters/fnmode"'
 
 alias nvidia-launch='__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia '
 
-function gcc-raylib() {
-    gcc -Wall -std=c99 -s -O1 -I/usr/local/include -L/usr/local/lib $* -lraylib -lGL -lm -lpthread -ldl -lrt -lX11
-}

@@ -7,8 +7,12 @@
 - clean: ['~']
 
 - shell:
+    - [ '[ ! -f $HOME/.oh-my-zsh/oh-my-zsh.sh ] && sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh) --unattended" || :', Install oh-my-zsh]
     - [ ./powerline-fonts/install.sh, 'Install powerline fonts' ]
-    - [ ./gnome/loadDconf.sh /org/gnome/ gnome/gnome.dconf, 'Load GNOME dconf' ]
+    - [ ./dconf/loadDconf.sh / dconf/settings.dconf, 'Load my dconf settings' ]
+    - [ 'sudo -n usermod -aG adm,lpadmin,dialout $USER' , "Add $USER in admin groups" ]
+    - [ 'sudo -n chsh -s $(which zsh) $USER', 'Change SHELL to zsh']
+    - [ rmdir $HOME/Templates $HOME/Public $HOME/Music, "Remove some default folders" ]
 
 - link:
     ~/.zshrc: zsh/zshrc_minimal

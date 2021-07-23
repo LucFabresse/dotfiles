@@ -2,5 +2,6 @@
 
 set -e
 
+sudo -v # acquire sudo token
 sudo ./install -p dotbot-apt/apt.py -c pop-os-2104/minimal_system_sudo.conf.yaml
 ./install -p dotbot-vscode/vscode.py -c pop-os-2104/minimal_system.conf.yaml

@@ -1,0 +1,66 @@
+[org/gnome/desktop/background]
+color-shading-type='solid'
+picture-options='zoom'
+picture-uri='file:///usr/share/backgrounds/pop/kate-hazen-COSMIC-desktop-wallpaper.png'
+primary-color='#000000'
+secondary-color='#000000'
+
+[org/gnome/desktop/input-sources]
+current=uint32 0
+sources=[('xkb', 'us+altgr-intl')]
+xkb-options=['ctrl:swap_lwin_lctl', 'lv3:caps_switch']
+
+[org/gnome/desktop/interface]
+font-name='Fira Sans Semi-Light 11'
+gtk-im-module='gtk-im-context-simple'
+
+[org/gnome/desktop/privacy]
+report-technical-problems=false
+
+[org/gnome/desktop/screensaver]
+color-shading-type='solid'
+picture-options='zoom'
+picture-uri='file:///usr/share/backgrounds/pop/kate-hazen-COSMIC-desktop-wallpaper.png'
+primary-color='#000000'
+secondary-color='#000000'
+
+[org/gnome/desktop/session]
+idle-delay=uint32 0
+
+[org/gnome/mutter]
+experimental-features=['x11-randr-fractional-scaling']
+
+[org/gnome/shell]
+favorite-apps=['firefox.desktop', 'org.gnome.Terminal.desktop', 'code.desktop', 'org.gnome.Nautilus.desktop', 'io.elementary.appcenter.desktop', 'gnome-control-center.desktop', 'org.gnome.tweaks.desktop']
+
+[org/gnome/shell/extensions/dash-to-dock]
+dash-max-icon-size=36
+dock-fixed=false
+extend-height=false
+intellihide=true
+manualhide=false
+multi-monitor=true
+show-mounts=false
+
+[org/gnome/shell/extensions/pop-cosmic]
+overlay-key-action='WORKSPACES'
+show-applications-button=false
+show-workspaces-button=false
+
+[org/gnome/system/location]
+enabled=false
+
+[org/gnome/terminal/legacy/keybindings]
+copy='<Primary>c'
+paste='<Primary>v'
+
+[org/gnome/terminal/legacy/profiles:]
+default='8687b690-1c89-4b7d-823d-a9a0a1a8cfd2'
+list=['b1dcc9dd-5262-4d8d-a863-c897e6d979b9', '8687b690-1c89-4b7d-823d-a9a0a1a8cfd2']
+
+[org/gnome/terminal/legacy/profiles:/:8687b690-1c89-4b7d-823d-a9a0a1a8cfd2]
+font='Meslo LG M DZ for Powerline 11'
+visible-name='Pop-Powerline'
+
+[org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
+font='Ubuntu Mono 11'

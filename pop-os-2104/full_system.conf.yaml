@@ -13,6 +13,7 @@
     #~/.gitignore_global: git/gitignore_global
     ~/.zshrc: zsh/zshrc
     ~/.config/Code/User/settings.json: vscode/settings.json
+    ~/.config/Code/User/keybindings.json: vscode/keybindings.json
 
 - vscode:
     - "zignd.html-css-class-completion"

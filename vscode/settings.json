@@ -142,7 +142,7 @@
     "dart.embedDevTools": false,
     "dart.enableSnippets": false,
     "workbench.editorAssociations": {
-        "*.ipynb": "jupyter.notebook.ipynb"
+        "*.ipynb": "jupyter-notebook"
     },
     "security.workspace.trust.untrustedFiles": "open",
     "window.zoomLevel": 2

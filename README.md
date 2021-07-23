@@ -26,6 +26,11 @@ APT packages installed successfully
 ==> All tasks executed successfully
 ```
 
+Note, to ignore __pycache__ in `dotbot-apt` submodule:
+```
+git config submodule.dotbot-apt.ignore untracked
+```
+
 ## Full Installation
 
 ```bash
@@ -33,38 +38,23 @@ git clone --recursive https://github.com/lucfabresse/dotfiles $HOME/.dotfiles &&
 # Log out and log in
 ```
 
+# Internal notes
+
 ## To do / To look at
 
 - dotbot-local
   - local / private customization
   - https://www.anishathalye.com/2014/08/03/managing-your-dotfiles/
-- dotbot-gsettings
 - save the git config in a 2nd user-specific path (`~/.config/git/config`), so I can override stuff in the local machine (in `~/.gitconfig`), such as the email.
 - dotbot-apt do not show a progress bar or so. could we use `debconf-apt-progress`?
-- what about passwords/credentials?
-  - https://chrisschuld.com/2019/06/securing-information-in-dotfiles-and-aliases-with-pass/
-  - https://www.passwordstore.org/
-  - https://www.dyne.org/software/tomb/
-  - https://www.passwordstore.org/#extensions
-  - https://f-droid.org/packages/dev.msfjarvis.aps/
-- Tresorit
 - android remote app
-- copy/paste terminal (tilix?)
 - clipboard manager
   - https://extensions.gnome.org/extension/779/clipboard-indicator/
   - https://esite.ch/tag/diodon/
 - custom bin scripts ~/.dotfiles/bin
   - in .zshrc add export PATH=~/.dotfiles/bin:${PATH}
+- tmux / split term
 
-## sudo problem
+## Excluded
 
-Another solution:
-
-sudo -v && ./install
-sudo -v && ./install_full
-
-```
-- shell:
- - command: sudo -n install -D -m644 systemd/timesyncd.conf /etc/systemd/timesyncd.conf
-    stderr: true
-```
+- dotbot-gsettings plugin

@@ -3,8 +3,8 @@
         "**/.git": true,
         "**/.svn": true,
         "**/.DS_Store": true,
-        "**/dist": true,
-        "**/build": true,
+        // "**/dist": true,
+        // "**/build": true,
         "**/env/**": true,
         "**/venv/**": true,
         "**/virtualenv/**": true,
@@ -17,8 +17,8 @@
     "files.watcherExclude": {
         "**/.git/objects/**": true,
         "**/node_modules/**": true,
-        "**/build/**": true,
-        "**/dist/**": true,
+        // "**/build/**": true,
+        // "**/dist/**": true,
         "**/env/**": true,
         "**/venv/**": true,
         "**/virtualenv/**": true,
@@ -130,7 +130,6 @@
     "open-in-browser.default": "chrome",
     "extensions.ignoreRecommendations": false,
     "php.validate.enable": false,
-    "diffEditor.ignoreTrimWhitespace": false,
     "git.confirmSync": false,
     "dart.previewLsp": true,
     "explorer.confirmDragAndDrop": false,
@@ -145,5 +144,29 @@
         "*.ipynb": "jupyter-notebook"
     },
     "security.workspace.trust.untrustedFiles": "open",
-    "window.zoomLevel": 2
+    "window.zoomLevel": 2,
+    "terminal.integrated.defaultProfile.linux": "zsh",
+    "terminal.integrated.profiles.linux": {
+
+        "bash": {
+            "path": "/usr/bin/bash"
+        },
+        "zsh": {
+            "path": "/usr/bin/zsh"
+        },
+        "tmux": {
+            "path": "/usr/bin/tmux",
+            "icon": "terminal-tmux"
+        }
+    },
+    "telemetry.enableTelemetry": false,
+    "update.mode": "manual",
+    "[json]": {
+
+        "editor.quickSuggestions": {
+            "strings": true
+        },
+        "editor.suggest.insertMode": "replace"
+    },
+    "diffEditor.ignoreTrimWhitespace": false
 }

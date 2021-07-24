@@ -1,3 +1,24 @@
+[com/gexperts/Tilix]
+control-scroll-zoom=true
+paste-strip-first-char=true
+paste-strip-trailing-whitespace=true
+quake-specific-monitor=0
+terminal-title-show-when-single=false
+unsafe-paste-alert=false
+
+[com/gexperts/Tilix/keybindings]
+terminal-copy='<Primary>c'
+terminal-paste='<Primary>v'
+
+[com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d]
+font='Meslo LG S DZ for Powerline 12'
+use-system-font=false
+visible-name='Default'
+
+[com/system76/hidpi]
+enable=false
+mode='lodpi'
+
 [org/gnome/desktop/background]
 color-shading-type='solid'
 picture-options='zoom'
@@ -59,6 +80,7 @@ default='8687b690-1c89-4b7d-823d-a9a0a1a8cfd2'
 list=['b1dcc9dd-5262-4d8d-a863-c897e6d979b9', '8687b690-1c89-4b7d-823d-a9a0a1a8cfd2']
 
 [org/gnome/terminal/legacy/profiles:/:8687b690-1c89-4b7d-823d-a9a0a1a8cfd2]
+background-color='rgb(24,24,24)'
 font='Meslo LG M DZ for Powerline 11'
 visible-name='Pop-Powerline'
 

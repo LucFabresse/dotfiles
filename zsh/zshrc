@@ -133,14 +133,11 @@ export PGID=`id -g`
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# export PILLAR_HOME="$HOME/Pharo/Booklets/Pillar.git"
-
-# export PATH=$HOME/.local/bin:/home/luc/.platformio/penv/bin:$PATH
 export PATH="$PATH:$HOME/.local/bin"
-#export PATH="$PATH:$HOME/.local/bin:/home/luc/.platformio/penv/bin:/home/luc/.local/share/flutter/bin"
+export PATH="$HOME/.npm/bin:$PATH"
 
 # export PATH="$HOME/.local/share/android-studio/bin:$PATH"
-export ANDROID_HOME="$HOME/.local/share/android-sdk"
+export ANDROID_SDK_ROOT="$HOME/.local/share/android-sdk"
 
 if [[ -s $HOME/.zshrc_private ]] ; then
     source $HOME/.zshrc_private

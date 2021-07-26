@@ -133,7 +133,7 @@ export PGID=`id -g`
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.dotfiles/bin:$HOME/.local/bin"
 export PATH="$HOME/.npm/bin:$PATH"
 
 # export PATH="$HOME/.local/share/android-studio/bin:$PATH"

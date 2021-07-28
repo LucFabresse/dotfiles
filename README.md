@@ -15,6 +15,7 @@ It uses:
 ```bash
 $ git clone --recursive https://github.com/lucfabresse/dotfiles $HOME/.dotfiles
 $ cd $HOME/.dotfiles
+$ git config submodule.dotbot-apt.ignore untracked
 
 $ ./install_minimal
 ./install_minimal

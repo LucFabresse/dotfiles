@@ -144,7 +144,6 @@
         "*.ipynb": "jupyter-notebook"
     },
     "security.workspace.trust.untrustedFiles": "open",
-    "window.zoomLevel": 2,
     "terminal.integrated.defaultProfile.linux": "zsh",
     "terminal.integrated.profiles.linux": {
 
@@ -168,5 +167,9 @@
         },
         "editor.suggest.insertMode": "replace"
     },
-    "diffEditor.ignoreTrimWhitespace": false
+    "diffEditor.ignoreTrimWhitespace": false,
+    "latex-utilities.message.update.show": false,
+    "debug.javascript.autoAttachFilter": "smart",
+    "redhat.telemetry.enabled": false,
+    "window.zoomLevel": -1
 }

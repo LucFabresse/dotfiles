@@ -1,0 +1,129 @@
+#!/usr/bin/env ruby
+
+require 'find'
+require 'fileutils'
+
+###############################################################################
+# GLOBALS
+###############################################################################
+
+$DEBUG = false
+
+def doit(cmd)
+  if $DEBUG
+    print cmd
+  else
+    system cmd
+  end
+end
+
+###############################################################################
+# Functions
+###############################################################################
+
+
+def delete_files_not_in_svn
+  sign = '\?'
+  list = IO.popen("svn st")
+  list.each do |i|
+    if (i =~ /^#{sign}\s*(.*)/)
+      doit "rm " + i[1..i.length].strip + "\n"
+    end
+  end
+end
+
+def delete_temporary_latex_files
+  Find.find('./') do |path|
+    if File.basename(path) =~ /~$/ || File.basename(path) =~ /.(aux|blg|bbl|brf|lof|lol|log|lot|maf|mtc|mtc.*|nav|nlo|out|snm|synctex.gz|tns|toc|vrb|lua|lb|fdb_latexmk|fls)$/
+      puts path
+      FileUtils.remove_file(path)
+      Find.prune
+    end
+  end
+end
+
+def delete_temporary_c_files
+  Find.find('./') do |path|
+    if File.basename(path) =~ /(~)$/ || File.basename(path) =~ /.(o)$/
+      puts path
+      FileUtils.remove_file(path)
+      Find.prune
+    end
+    if( File.basename(path) == 'CVS' )
+      puts path
+      FileUtils.rm_rf(path)
+      Find.prune
+    end
+  end
+end
+
+
+def fixNamingConventions
+  Find.find('./') do |path|
+    # if File.basename(path) == /^[A-Z]/
+    #   puts "#{path} starts with maj"
+    # end
+    if File.basename(path) =~ /\.C$/
+      puts "#{path}"
+    end
+  end
+end
+
+def fixRights
+  doit "find . -type d -exec chmod 755 {} \\;"
+  doit "find . -type f -exec chmod 644 {} \\;"
+end
+
+
+###############################################################################
+# ARGUMENTS / TESTS / DEBUG
+###############################################################################
+
+require 'optparse'
+
+# def delete_files_not_in_svn
+#   lines = system "svn st "
+#   puts lines.class
+# end
+
+opts = OptionParser.new do |opts|
+   opts.banner = "Usage: clean [options]"
+   opts.separator ""
+   opts.separator "Specific options:"
+   opts.on("--svn", "Clear files that do not belong to svn repository") do |s|
+        delete_files_not_in_svn
+   end
+   opts.on("--latex", "Run without output except results") do |s|
+        delete_temporary_latex_files
+   end
+   opts.on("--c", "delete temp c files (*.o)") do |s|
+        delete_temporary_c_files
+   end
+   opts.on("--fixCases", "apply naming conventions, Directory, file") do |s|
+         fixNamingConventions
+   end
+   opts.on("--fixRights", "apply 755 to directories and 644 to files") do |s|
+         fixRights
+   end
+   opts.on("--debug", "Only display commands (execute nothing)") do |s|
+      $DEBUG = true
+   end
+   opts.on_tail("-h","--help","Show this message") do |s|
+      # show help
+      puts opts
+      exit
+   end
+end
+
+
+begin
+  opts.parse!(ARGV)
+
+rescue OptionParser::InvalidOption => e
+  puts e.to_s
+  opts.parse!([__FILE__, "-h"])
+end
+
+
+
+

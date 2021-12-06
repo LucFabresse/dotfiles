@@ -7,14 +7,17 @@
 
 - shell:
     - [ '[ ! -f /etc/apt/trusted.gpg.d/microsoft.gpg ] && wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > /tmp/microsoft.gpg && install -o root -g root -m 644 /tmp/microsoft.gpg /etc/apt/trusted.gpg.d/ && echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list || :', VScode APT source]
+    - [ '[ ! -f /etc/apt/sources.list.d/diodon*.list ] && add-apt-repository -y ppa:diodon-team/stable ||:', Diodon APT source ]
     - [ '[ ! -f /usr/share/X11/xkb/symbols/us.backup ] && cp /usr/share/X11/xkb/symbols/us /usr/share/X11/xkb/symbols/us.backup && cp -f keyboard/us.luc /usr/share/X11/xkb/symbols/us || :', "Install Luc's US Keyboard layout" ]
 
 #- sshuttle
 #- guake
+# - nautilus-admin
+
 - apt:
     - tilix
+    - diodon
     - filezilla
-    - nautilus-admin
     - code
     - btrfs-progs
     - gnome-tweaks

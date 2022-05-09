@@ -1,0 +1,29 @@
+#!/usr/bin/env python
+
+# ./installedPackagesPerRepository.py | tee `date +%F`-installedPackagesPerRepository.txt
+
+import os
+
+stream = os.popen("dpkg-query --showformat '${Package}\n' -W ")
+output = stream.read()
+
+packagesPerRepo = {}
+for packageName in output.splitlines():
+    # print packageName
+    policyCmd = "apt-cache policy {}".format(packageName)
+    packageInfos = os.popen(policyCmd)
+    infos = packageInfos.read()
+    splitInfos = infos.split('***')
+    if(len(splitInfos)>1):
+        infos = splitInfos[1]
+        repo = infos.splitlines()[1]
+        repo = repo.split()[1]
+    else:
+        repo = "***not installed***"
+    packagesForRepo = packagesPerRepo.setdefault(repo, [])
+    packagesForRepo.append(packageName)
+
+for repo in packagesPerRepo:
+    print(repo)
+    for package in packagesPerRepo.get(repo):
+        print("\t"+package)

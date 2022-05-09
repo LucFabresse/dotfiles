@@ -5,7 +5,7 @@ alias l='ls'
 alias ll='ls -l'
 alias la='ll -a'
 alias du-sh="du -sh * | gsort -rh"
-alias grep='grep  --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}'
+# alias grep='grep  --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}'
 
 # because typing 'cd' is A LOT of work!!
 alias d='dirs -v'
@@ -55,8 +55,17 @@ function gcc-raylib() {
 
 alias valgrind-check="valgrind --leak-check=yes --leak-check=full --show-leak-kinds=all --show-reachable=no "
 alias myip="curl ifconfig.me"
-alias dc="docker-compose"
 alias pharo='~/Pharo/vms/90-x64/bin/pharo '
+
+function docker-bash() {
+    docker exec -it --user `id -u` `docker ps -q | head -1` bash
+}
+
+function docker-stop-all() {
+    docker stop $(docker ps -q)
+}
+
+alias dc="docker-compose"
 
 
 

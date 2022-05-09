@@ -1,0 +1,13 @@
+- /lost+found/***
+- /dev
+- /media/***
++ /mnt/*
+- /mnt/**
+- /proc/***
+- /run/***
+- /swapfile
+- /sys/***
+- /tmp/***
+- /var/cache/***
+- /var/tmp/***
++ *

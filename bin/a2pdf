@@ -1,0 +1,31 @@
+#!/bin/bash
+
+OUTPUT=out.pdf
+FILES=
+
+out=0
+
+for i in $* ; do
+	if [ a$out == a1 ]; then
+		OUTPUT=$i
+		out=0
+	else if [ a$i == a-o ] ; then
+			out=1
+		 else
+			
+			FILES="$FILES ${i}"
+		fi
+	fi
+done
+
+# echo "out  =  $OUTPUT"
+# echo "files = $FILES"
+# exit
+
+# a2ps --pro=color -o $OUTPUT.ps $FILES --header --left-title --right-title --left-footer --footer -C
+a2ps --pro=color -o $OUTPUT.ps $FILES --header --right-footer --left-footer -C
+# a2ps -o $OUTPUT.ps $FILES 
+ps2pdf -sPAPERSIZE=a4 $OUTPUT.ps $OUTPUT
+rm $OUTPUT.ps
+
+# pdfbook  $OUTPUT.pdf

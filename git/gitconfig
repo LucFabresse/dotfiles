@@ -17,3 +17,6 @@
 	ui = auto
 [include]
     path = ~/.gitconfig_private
+[user]
+	name = Luc Fabresse
+	email = luc.fabresse@gmail.com

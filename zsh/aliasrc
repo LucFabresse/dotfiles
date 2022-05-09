@@ -59,6 +59,11 @@ alias dc="docker-compose"
 alias pharo='~/Pharo/vms/90-x64/bin/pharo '
 
 
+
+function docker-bash(){
+ docker exec -it --user `id -u` `docker ps -q | head -1` bash
+}
+
 # remove all untracked / unstaged files
 unalias gcm gcmsg
 alias gcm="git commit -m "

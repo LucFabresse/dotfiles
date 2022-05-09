@@ -1,0 +1,44 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+      force: true
+
+- clean: ['~']
+
+- shell:
+    - [ '[ ! -f $HOME/.oh-my-zsh/oh-my-zsh.sh ] && sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh) --unattended" || :', Install oh-my-zsh]
+    - [ '[ -f $HOME/zshrc.pre-oh-my-zsh ] && rm ~/zshrc.pre-oh-my-zsh || :', remove default .zshrc]
+    - [ ./powerline-fonts/install.sh, 'Install powerline fonts' ]
+    - [ ./dconf/loadDconf.sh / dconf/settings.dconf, 'Load my dconf settings' ]
+    - [ 'sudo -n usermod -aG adm,lpadmin,dialout $USER' , "Add $USER in admin groups" ]
+    - [ 'sudo -n chsh -s $(which zsh) $USER', 'Change SHELL to zsh']
+    - [ rm -fr $HOME/Templates $HOME/Public $HOME/Music, "Remove some default folders" ]
+
+- link:
+    ~/.zshrc: zsh/zshrc_minimal
+    ~/.oh-my-zsh/custom: zsh/custom
+    ~/.config/Code/User/settings.json: vscode/settings_minimal.json
+
+- create:
+  - ~/.local/bin
+  - ~/.bookmarks
+
+- vscode:
+    - 'yzhang.markdown-all-in-one'
+    - "pkief.material-icon-theme"
+    - "ms-python.python"
+    - "ms-vsliveshare.vsliveshare-pack"
+    - "ms-vscode-remote.remote-ssh"
+    - "platformio.platformio-ide"
+
+- shell:
+    - [ DC_PATH=~/.local/bin/docker-compose && curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o "$DC_PATH" && chmod +x "$DC_PATH", Installing Docker Compose]
+    # - [/usr/bin/pip3 install --user arxiv-latex-cleaner, Installing arxiv_latex_cleaner]
+
+- link:
+    ~/.gitconfig: git/gitconfig
+    #~/.gitignore_global: git/gitignore_global
+    ~/.zshrc: zsh/zshrc
+    ~/.config/Code/User/settings.json: vscode/settings.json
+    ~/.config/Code/User/keybindings.json: vscode/keybindings.json

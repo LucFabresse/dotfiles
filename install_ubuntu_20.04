@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+set -e
+
+sudo -v # acquire sudo token
+sudo ./install -p dotbot-apt/apt.py -c ubuntu-20.04/system_sudo.conf.yaml
+./install -p dotbot-vscode/vscode.py -c ubuntu-20.04/system.conf.yaml

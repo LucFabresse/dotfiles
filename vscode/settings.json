@@ -168,5 +168,9 @@
         },
         "editor.suggest.insertMode": "replace"
     },
-    "diffEditor.ignoreTrimWhitespace": false
+    "diffEditor.ignoreTrimWhitespace": false,
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    }
 }
